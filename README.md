@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+
 </head>
 <body>
   <h1>SQLite Database Creation in Python - BookInfo</h1>
@@ -9,6 +9,14 @@
     This project consists of Python code that uses SQLite3 to create a simple relational database. SQLite is a C library that provides a lightweight disk-based database, which doesn't require a separate server process, and allows accessing the database using a nonstandard variant of the SQL query language. The project focuses on the creation of a database called <code>BookInfo.db</code>, containing two tables: <code>Authors</code> and <code>Books</code>.
   </p>
 
+  <h2>Requirements</h2>
+  <p>
+    The following components are required to run this Python script:
+  </p>
+  <ul>
+    <li>Python 3.6 or higher</li>
+    <li>sqlite3 module (comes built-in with Python 3.x)</li>
+  </ul>
   <h2>Features</h2>
   <p>
     The main features of this script are:
@@ -17,6 +25,10 @@
     <li>Database Creation: The script creates an SQLite database named <code>BookInfo.db</code>.</li>
     <li>Table Creation: It creates two tables, <code>Authors</code> and <code>Books</code>.</li>
     <li>Data Insertion: The script populates the tables with sample data related to authors and books.</li>
+    <li>Data Retrieval: The script fetches and prints all records from the <code>Authors</code> table.</li>
+    <li>Data Filtering: It takes user input for an author's birthplace and fetches all books written by authors from that place.</li>
+    <li>Data Filtering based on Year: It takes user input for a year and retrieves all book titles that were published after that year, sorted by the year of publication.</li>
+    <li>File Writing: The script asks for an author's name and writes all the books by the author to a text file.</li>
   </ol>
 
   <h2>Tables Information</h2>
@@ -36,7 +48,7 @@
 
   <h2>Usage</h2>
   <p>
-    This Python script can be executed in any Python environment. It connects to an SQLite database, creates tables if they don't already exist, and then populates these tables with data.
+    This Python script can be executed in any Python environment. It connects to an SQLite database, creates tables if they don't already exist, and then populates these tables with data. After that, it retrieves all data from the <code>Authors</code> table and prints them. It also prompts the user to input a location and retrieves all books written by authors from that place. It takes a year as input and prints all books published after that year in ascending order of their publication year. Finally, it asks for an author's name and writes all the books by that author to a text file.
   </p>
 
   <h2>Dataset</h2>
@@ -63,13 +75,7 @@
   <h2>Note</h2>
   <ul>
     <li>The <code>PRIMARY KEY</code> constraints are being used to ensure that the <code>ID</code> in <code>Books</code> table and <code>Name</code> in <code>Authors</code> table are unique and not null.</li>
-
-  </ul>
-
-  <h2>Requirements</h2>
-  <ul>
-    <li>Python 3.x</li>
-    <li>SQLite3 module in Python</li>
+    <li>The script generates a text file with the name 'Booklist.txt', containing a list of books by a given author. The structure of each line in the file is 'ID - Title - Author - Year Published'.</li>
   </ul>
 </body>
 </html>
